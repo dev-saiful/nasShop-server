@@ -9,6 +9,9 @@ import productRoute from "./routes/product.routes.js";
 import orderRoute from "./routes/order.routes.js";
 import uploadRoute from "./routes/upload.routes.js";
 import { errorHandler,notFound } from "./middlewares/error.middleware.js";
+import job from "./cron.js";
+
+job.start();
 
 export const app = express();
 /**
