@@ -33,8 +33,10 @@ app.get("/api/config/paypal",(req,res)=>{
     res.send({clientId : process.env.PAYPAL_CLIENT_ID});
 });
 
+app.use("/uploads",express.static("/var/data/uploads"));
+
 app.get("/",(req,res)=>{
-      
+   
         res.send("Api is running");
 });
 
