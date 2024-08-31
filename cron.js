@@ -1,7 +1,7 @@
 import { CronJob } from "cron";
 import https from "https";
 
-const URL = "";
+const URL = process.env.URL;
 
 const job = new CronJob("*/14 * * * *", function(){
     https.get(URL,(res)=>{
