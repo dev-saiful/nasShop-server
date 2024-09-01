@@ -17,7 +17,7 @@ export const app = express();
  * @desc middlewares needed
  */
 app.use(cors({
-    origin:["https://nasstore.vercel.app/"],
+    origin:["https://nasstore.vercel.app"],
     credentials:true,
 }));
 app.use(express.json());
