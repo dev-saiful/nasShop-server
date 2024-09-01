@@ -1,7 +1,5 @@
-import path from "path";
 import express from "express";
 import dotenv from "dotenv";
-dotenv.config();
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import userRoute from "./routes/user.routes.js";
@@ -11,6 +9,7 @@ import uploadRoute from "./routes/upload.routes.js";
 import { errorHandler,notFound } from "./middlewares/error.middleware.js";
 import job from "./cron.js";
 
+dotenv.config();
 job.start();
 
 export const app = express();
@@ -18,7 +17,7 @@ export const app = express();
  * @desc middlewares needed
  */
 app.use(cors({
-    origin:["http://localhost:3000"],
+    origin:["https://nasstore.vercel.app/"],
     credentials:true,
 }));
 app.use(express.json());
